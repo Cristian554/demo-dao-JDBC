@@ -14,18 +14,22 @@ public class Program {
 		SellerDao sellerDao = DaoFactory.createdSellerDao();	// assin se instancia o objeto
 		
 		System.out.println("=== TEST 1: SELLER FindById ===");
-		Seller seller = sellerDao.findById(3);
-		
+		Seller seller = sellerDao.findById(3);		
 		System.out.println(seller);
 		
-		System.out.println("\n=== TEST 2: SELLER FindByDepartment ===");
-		
+		System.out.println("\n=== TEST 2: SELLER FindByDepartment ===");	
 		Department department = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartment(department);
-		
 		for(Seller obj : list) {
 			System.out.println(obj);
 		}
+		System.out.println("\n=== TEST 3: SELLER FindAllt ===");	
+		list = sellerDao.findAll();		
+		for(Seller obj : list) {
+			System.out.println(obj);
+		
+		}
 	}
-
 }
+
+
